@@ -1,0 +1,52 @@
+
+
+.nav-bar{
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 50px 60px 50px 60px;
+    justify-content: space-between;
+  }
+  
+  .nav-actions{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  
+  }
+  
+  .nav-links{
+    margin-right: 20px;
+    display: inline-block;
+  }
+  
+  .nav-links-text{
+    margin: 0;
+  }
+  
+  .nav-links button{
+    background-color: var(--background-color);
+    font-family: 'Konkhmer Sleokchher';
+    font-size: var(--font-size-medium);
+    color: var(--font-color-black);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+  }
+  
+  .action-button{
+    padding: 10px;
+    margin: 0px 10px;
+    border:none;
+    background-color: transparent;
+  }
+  
+  .action-button img{
+    height: 30px;
+    width: 30px;
+    padding: 0;
+  }

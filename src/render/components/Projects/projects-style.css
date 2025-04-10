@@ -1,0 +1,89 @@
+.projects-intro{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 105vh;
+}
+
+.projects-intro-text{
+    font-size: 7rem;
+    font-family: "Metropolis";
+    text-transform: uppercase;
+    z-index: 100;
+}
+
+
+
+/* .projects-intro-text:before{
+    content: attr(data-content);
+    color: black;
+    
+    -webkit-text-stroke: 2px #FF29ED;
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+} */
+
+/*Projects Intro Elements Styles*/
+
+.circle-halftone, .line-long-one, .line-short-one, .star-one,
+.rounded-square-one, .rounded-square-outline-one, .triangle-one,
+.star-two{
+    position: absolute;
+}
+
+.circle-halftone{
+    z-index: 99;
+    top: 25%;
+    left: 22%;
+    width: 10rem;
+}
+
+.line-long-one{
+    z-index: 100;
+    top: 28.8%;
+    left: 20.8%;
+    width: 13rem;
+}
+
+.line-short-one{
+    top: 34%;
+    left: 24%;
+    width: 10rem;
+
+}
+
+.star-one{
+    top: 38%;
+    left: 19%;
+    width: 3rem;
+}
+
+.rounded-square-one{
+    left: 52.6%;
+    top: 9.6%;
+    width: 9.4rem;
+    z-index: 10;
+}
+
+.rounded-square-outline-one{
+    width: 6.6rem;
+    top: 19.4%;
+    left: 58.0%;
+}
+
+.triangle-one{
+  z-index: 99;
+  width: 11.6rem;
+  top: 41.6%;
+  left: 65.2%;
+}
+
+.star-two{
+    z-index: 100;
+    width: 4.2rem;
+    top: 56.8%;
+    left: 74.0%;
+}

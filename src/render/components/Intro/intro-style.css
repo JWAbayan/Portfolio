@@ -1,0 +1,112 @@
+.intro-section{
+    height: 100vh;
+    color: var(--font-color-black);
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+} 
+
+.hero{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+
+.hero-header{
+    font-family: 'Metropolis';
+    position: absolute;
+    text-wrap: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    font-weight:600 ;
+}
+
+.hero-subheader{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--font-color-green);
+
+    text-decoration: none;
+    font-family: "Konkhmer Sleokchher";
+}
+
+
+.double-circle, .grid-one, .donut, .sphere-one, 
+.sphere-two, .grid-two, .brush-stroke, .spiral-square, .triangle{
+    position: absolute;
+}
+
+.brush-stroke{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 50rem;
+}   
+
+ /*HERO ELEMENT 1*/
+
+.double-circle{
+    top: 150px;
+    left: 160px;
+    height: 25vh;
+    width: 15vw;
+}
+
+.donut {
+    top: 250px;
+    left: 160px;
+    width: 5vw;
+}
+
+ /* HERO ELEMENT 2 */
+
+.grid-one{
+    top:25%;
+    right:12%;
+    height: 15em;
+    width: 5em;
+}
+
+
+.sphere-one{
+    top:20%;
+    right:12%;
+    width: 10em;
+}
+
+ /*HERO ELEMENT 3*/
+
+.sphere-two{
+    bottom: 65px;
+    left: 300px;
+    width: 7vw;
+}
+
+.grid-two{
+    bottom: 50px;
+    left: 140px;
+    width: 15vw;
+}
+
+ /*HERO ELEMENT 3*/
+.spiral-square{
+    bottom:10%;
+    right:10%;
+    width: 8em;
+}
+
+.triangle{
+    bottom:13%;
+    right:12%;
+    width: 10em;
+}

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Konkhmer Sleokchher" ;
+  src: url("./render/assets/fonts/KonkhmerSleokchher-Regular.ttf");
+}
+
+@font-face{
+  font-family: "Metropolis";
+  src: url("./render/assets/fonts/Metropolis-Regular.otf");
+  src: url("./render/assets/fonts/Metropolis-Bold.otf")
+}
+
+:root{
+  --background-color: #ffffff;
+  --font-color-white: #e8edf3;
+  --font-color-black: #111;
+  --font-color-green: #45CB85;
+  --font-family: 'Segoe UI', sans-serif;
+  --font-size-small: 1rem;
+  --font-size-medium: 1.3rem;
+  --font-size-large: 3rem;
+
+  background-color: var(--background-color);
+}
+
+body{
+  font-family: var(--font-family);
+  color: var(--font-color-black);
+  margin: 0;
+  min-height: 300vh;
+}
+
+.personal-logo{
+  height: 4rem;
+}
+
+.intro-section, .projects-section, .extras-section, .about-section {
+  height: 100vh;
+}
+
+.spacer{
+  height: 70px;
+}
+
+
+.personal-photo{
+  --photo-size: 150px;
+  border-radius: 50%;
+  height: var(--photo-size);
+  width: var(--photo-size);
+}
+
+
+
+
+.extras-section{
+
+}
+ 
