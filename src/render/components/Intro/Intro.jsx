@@ -9,7 +9,7 @@ import brushStroke from '../../assets/parallaxElements/brush-stroke.svg'
 
 function Intro(){
     return(
-        <div id="about" className="intro-section">
+        <section className="intro-section">
           <HeroElementOne/>
           <HeroElementTwo/>
           <HeroElementThree/>
@@ -25,8 +25,6 @@ function Intro(){
               Check out my projects
             </p>
           </a>
-        
-
         {/* <div class="personal-photo-container">
           <img className="personal-photo" src={personalPhoto} alt="personal-photo"/>
         </div> */}
@@ -38,7 +36,7 @@ function Intro(){
           </h1>
           <img className="down-arrow" src={downArrow} alt="down-arrow-icon"/>
         </div> */}
-      </div>
+      </section>
     );
 }
 

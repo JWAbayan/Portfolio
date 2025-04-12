@@ -82,7 +82,7 @@ const projectsInfo = [
 function Projects(){
     return(
         <>
-            <div className="projects-intro">
+            <section className="projects-intro">
                 <h1 className="projects-intro-text" data-content="Projects">Projects</h1>
                 {
                     introElements.map( e =>{
@@ -91,10 +91,10 @@ function Projects(){
                         )
                     })
                 }
-            </div>
-            <div id="projects" className="projects-section">
-                
-            </div>
+            </section>
+            <section id="projects" className="projects-section">
+
+            </section>
         </>
     );
 }

@@ -9,7 +9,7 @@ import About from './render/components/About/About'
 function App() {
 
   return (
-    <>      
+    <main>      
       <Navbar/>
       <Intro/>
       <div className="spacer"/>
@@ -18,7 +18,7 @@ function App() {
       <Experiments/>
       <div className="spacer"/>
       <About/>              
-    </>
+    </main>
   );
 }
 
