@@ -104,32 +104,20 @@ function Projects(){
     }
 
     return(
-        <>
-            <section className="projects-intro">
-                <h1 className="projects-intro-text" data-content="Projects">Projects</h1>
-                {
-                    introElements.map( e =>{
-                        return(
-                            <img src={e.src} className={e.className}/>
-                        )
-                    })
-                }
-            </section>
-            <section id="projects" className="projects-section">
-                {
-                    // projectsInfo.map((project,index)=>{
-                    //     return(
-                    //         <button 
-                    //             onClick={()=>changeDisplayedProject(index)} 
-                    //             style={{backgroundColor: displayedProject === index ? "red" : ""}} 
-                    //             className="project-navigation-button" 
-                    //         />
-                    //     )
-                    // })
-                }
-                <h1>{displayedProject}</h1>
-            </section>
-        </>
+        <section id="projects" className="projects-section">
+            {
+                // projectsInfo.map((project,index)=>{
+                //     return(
+                //         <button 
+                //             onClick={()=>changeDisplayedProject(index)} 
+                //             style={{backgroundColor: displayedProject === index ? "red" : ""}} 
+                //             className="project-navigation-button" 
+                //         />
+                //     )
+                // })
+            }
+            <h1>{displayedProject}</h1>
+        </section>
     );
 }
 
