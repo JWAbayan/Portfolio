@@ -119,9 +119,17 @@
 }
 
 .projects-section{
-    display: grid;
+    padding: 5rem;
+    /* display: grid;
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr; 
+    grid-template-rows: 1fr;  */
+}
+
+.project-navigation-button{
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    border-radius:50px;
 }
 
 

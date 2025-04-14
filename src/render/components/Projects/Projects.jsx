@@ -11,6 +11,9 @@ import RoundedSquareTwo from './img/rounded-square-2.svg'
 import StarThree from './img/star-3.svg'
 import LineLongTwo from "./img/line-long-2.svg"
 import LineShortTwo from "./img/line-short-2.svg" 
+import { div } from 'three/tsl'
+import { ssrDynamicImportKey } from 'vite/module-runner'
+import { useState } from 'react'
 
 
 const introElements = [
@@ -76,10 +79,30 @@ const projectsInfo = [
         link:"",
         title: "",
         description:""
-    }
+    },
+    {
+        img: "",
+        link:"",
+        title: "",
+        description:""
+    },
+    {
+        img: "",
+        link:"",
+        title: "",
+        description:""
+    },
+    
 ]
 
 function Projects(){
+
+    const [displayedProject, setDisplayedProject] = useState(0);
+
+    function changeDisplayedProject(index){
+        setDisplayedProject(index);
+    }
+
     return(
         <>
             <section className="projects-intro">
@@ -93,7 +116,18 @@ function Projects(){
                 }
             </section>
             <section id="projects" className="projects-section">
-
+                {
+                    // projectsInfo.map((project,index)=>{
+                    //     return(
+                    //         <button 
+                    //             onClick={()=>changeDisplayedProject(index)} 
+                    //             style={{backgroundColor: displayedProject === index ? "red" : ""}} 
+                    //             className="project-navigation-button" 
+                    //         />
+                    //     )
+                    // })
+                }
+                <h1>{displayedProject}</h1>
             </section>
         </>
     );
