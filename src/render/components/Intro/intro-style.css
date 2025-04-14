@@ -1,30 +1,33 @@
 .intro-section{
-    height: 100vh;
     color: var(--font-color-black);
-    display:flex;
-    text-align: center;
-    flex-direction: column;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 1fr;
 } 
 
-.hero{
-    height: 100%;
+.hero-content{
+    /* z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%); */
+    max-height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center ;
+    align-items: center;
+}
+
+.hero-canvas{
     max-width: 100%;
-    text-align: center;
-  }
+    max-height: 100%;
+}
   
 
 .hero-header{
+    margin: 0;
     font-family: 'Metropolis';
-    position: absolute;
-    text-wrap: nowrap;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2.8rem;
-    font-weight:600 ;
+    font-size: 3rem;
+    font-weight: 600 ;
 }
 
 .hero-subheader{
@@ -40,73 +43,3 @@
 }
 
 
-.double-circle, .grid-one, .donut, .sphere-one, 
-.sphere-two, .grid-two, .brush-stroke, .spiral-square, .triangle{
-    position: absolute;
-}
-
-.brush-stroke{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 50rem;
-}   
-
- /*HERO ELEMENT 1*/
-
-.double-circle{
-    top: 150px;
-    left: 160px;
-    height: 25vh;
-    width: 15vw;
-}
-
-.donut {
-    top: 250px;
-    left: 160px;
-    width: 5vw;
-}
-
- /* HERO ELEMENT 2 */
-
-.grid-one{
-    top:25%;
-    right:12%;
-    height: 15em;
-    width: 5em;
-}
-
-
-.sphere-one{
-    top:20%;
-    right:12%;
-    width: 10em;
-}
-
- /*HERO ELEMENT 3*/
-
-.sphere-two{
-    bottom: 65px;
-    left: 300px;
-    width: 7vw;
-}
-
-.grid-two{
-    bottom: 50px;
-    left: 140px;
-    width: 15vw;
-}
-
- /*HERO ELEMENT 3*/
-.spiral-square{
-    bottom:10%;
-    right:10%;
-    width: 8em;
-}
-
-.triangle{
-    bottom:13%;
-    right:12%;
-    width: 10em;
-}

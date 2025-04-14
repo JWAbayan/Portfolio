@@ -29,7 +29,7 @@
   }
   
   .nav-links button{
-    background-color: var(--background-color);
+    background-color: transparent;
     font-family: 'Konkhmer Sleokchher';
     font-size: var(--font-size-medium);
     color: var(--font-color-black);
