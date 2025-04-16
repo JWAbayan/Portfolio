@@ -7,7 +7,7 @@ export default function Earth(props) {
   const meshRef = useRef()
 
   useFrame((state, delta)=>{
-    meshRef.current.rotation.y += delta;
+    meshRef.current.rotation.y += .006;
   })
 
   return (

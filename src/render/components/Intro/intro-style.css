@@ -1,8 +1,9 @@
 .intro-section{
+    height:90vh;
     color: var(--font-color-black);
-    padding: 3rem;
+    padding: 3rem 3rem 3rem 3rem;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.1fr 0.9fr;
     grid-template-rows: 1fr;
 } 
 
@@ -15,6 +16,7 @@
     max-height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-canvas{
@@ -24,9 +26,10 @@
   
 
 .hero-header{
+    text-wrap: nowrap;
     margin: 0;
     font-family: 'Metropolis';
-    font-size: 3rem;
+    font-size: clamp(1rem, 5vw, 3rem);
     font-weight: 600 ;
 }
 
@@ -43,3 +46,14 @@
 }
 
 
+.passion-text{
+    transition: opacity 0.5s cubic-bezier(.55,.085,.68,.53);
+}
+
+.text-fade-in{
+    opacity: 1;
+}
+
+.text-fade-out{
+    opacity: 0;
+}

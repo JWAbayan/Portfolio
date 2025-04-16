@@ -37,7 +37,8 @@ body{
   height: 100vh;
 }
 .spacer{
-  height: 70px;
+  background-color: var(--font-color-green);
+  height: 200px;
 }
 
 
@@ -48,10 +49,3 @@ body{
   width: var(--photo-size);
 }
 
-
-
-
-.experiments-section{
-
-}
- 

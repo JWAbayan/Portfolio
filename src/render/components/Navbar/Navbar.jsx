@@ -25,6 +25,10 @@ function Navbar(){
 
     const [menuExpanded, expandMenu] = useState(true);
 
+    function navigateToSection(link){
+      
+    }
+
     return(
         <div className="nav-bar">
         <img className="personal-logo" src={personalLogo} alt="Personal Logo"/>
