@@ -44,7 +44,7 @@ function Intro(){
                 <br/>
                 A developer with passion for 
                 <br/>
- 
+
                 <span style={{color:"#45CB85"}} className={`passion-text ${fade}`}>
                   {
                     passions[passionIndex]
