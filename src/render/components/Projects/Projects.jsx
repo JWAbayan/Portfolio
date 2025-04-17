@@ -1,41 +1,85 @@
 import './projects-style.css'
 import { useState } from 'react'
 import StockImage from "./img/stock-image.png"
+import { element } from 'three/tsl';
 
-const projectsContent = [
+// const projectsContent = [
+//     {
+//         title: "Project Title",
+//         tools: "Framework, Libraries, Tools",
+//         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
+//         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
+//          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+//     },
+//     {
+//         src: StockImage,
+//         alt: "stock-image"
+//     },
+//     {
+//         title: "Project Title",
+//         tools: "Framework, Libraries, Tools",
+//         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
+//         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
+//          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+//     },
+//     {
+//         src: StockImage,
+//         alt: "stock-image"
+//     },
+//     {
+//         title: "Project Title",
+//         tools: "Framework, Libraries, Tools",
+//         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
+//         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
+//          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+//     },
+//     {
+//         src: StockImage,
+//         alt: "stock-image"
+//     }
+// ]
+
+
+const projectsContent = [ 
     {
-        title: "Project Title",
-        tools: "Framework, Libraries, Tools",
-        description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
-         Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+        info: {
+            title: "Project Title",
+            tools: "Framework, Libraries, Tools",
+            description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
+            Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
+            Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+        },
+        img:{
+            src: StockImage,
+            alt: "stock-image"
+        }
     },
     {
-        src: StockImage,
-        alt: "stock-image"
-    },
-    {
-        title: "Project Title",
-        tools: "Framework, Libraries, Tools",
-        description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
-         Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
-    },
-    {
-        src: StockImage,
-        alt: "stock-image"
-    },
-    {
-        title: "Project Title",
-        tools: "Framework, Libraries, Tools",
-        description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
-         Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
-    },
-    {
-        src: StockImage,
-        alt: "stock-image"
-    }
+        info: {
+         title: "Project Title",
+         tools: "Framework, Libraries, Tools",
+         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
+         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
+          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+         },
+         img:{
+             src: StockImage,
+             alt: "stock-image"
+         }
+     },
+     {
+         info: {
+          title: "Project Title",
+          tools: "Framework, Libraries, Tools",
+          description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
+          Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
+           Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
+          },
+          img:{
+              src: StockImage,
+              alt: "stock-image"
+          }
+      }
 ]
 
 
@@ -71,6 +115,16 @@ function ProjectInfo({info}){
 }
 
 
+function ProjectItem ({content}){
+    return(
+        <div className="project-item">
+            <ProjectInfo info={content.info}/>
+            <ProjectImage info={content.img}/>
+        </div>
+    );
+}
+
+
 function Projects(){
 
     const [displayedProject, setDisplayedProject] = useState(0);
@@ -93,12 +147,8 @@ function Projects(){
             </div>
             <div className="projects-content">
                 {
-                    projectsContent.map((content, index) => {
-                        if(index % 2 == 0){
-                            return <ProjectInfo key={crypto.randomUUID()} info={projectsContent[index]}/>
-                        }else{
-                            return <ProjectImage key={crypto.randomUUID()} info={projectsContent[index]} />
-                        }
+                    projectsContent.map( content => {
+                        return <ProjectItem content={content}/>
                     })                    
                 }
             </div>

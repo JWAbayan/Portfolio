@@ -12,7 +12,6 @@ function App() {
     <main>      
       <Navbar/>
       <Intro/>
-      <div className="spacer"/>
       <Projects/>
       <div className="spacer"/>
       <Experiments/>
