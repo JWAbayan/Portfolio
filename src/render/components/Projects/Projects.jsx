@@ -1,7 +1,7 @@
 import './projects-style.css'
 import { useState } from 'react'
 import StockImage from "./img/stock-image.png"
-import { element } from 'three/tsl';
+import '../../../App.css'
 
 // const projectsContent = [
 //     {
@@ -135,11 +135,11 @@ function Projects(){
 
     return(
         <section id="projects" className="projects-section">
-            <div className="projects-header">
-                <h1 className="projects-header-text-main">
+            <div className="section-header">
+                <h1 className="section-header-text-main">
                         Projects
-                </h1>
-                <h1 className="projects-header-text-sub">
+                </h1>   
+                <h1 className="section-header-text-sub">
                     Web Applications and 
                     <br/>
                     Game Development
