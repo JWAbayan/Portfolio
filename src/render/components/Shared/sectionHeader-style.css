@@ -1,0 +1,26 @@
+.section-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section-header-text-main{
+    font-family: "Metropolis";
+    font-size: var(--font-size-large);
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    color: var(--font-color-green);
+    font-weight: 800;
+    margin: 0;
+  }
+  
+  .section-header-text-sub{
+    white-space: pre-wrap;
+    font-family: "Metropolis";
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 25px 0 0 0;
+}
+  
+  
+  

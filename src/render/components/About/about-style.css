@@ -1,1 +1,38 @@
-   
+.about-section{
+    min-height: 100vh;
+    padding: 50px 180px 50px 180px;
+}
+
+.about-content{
+    margin-top: 50px;
+    display: flex;
+}
+
+.experiences{
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 25px;
+    column-gap: 25px;
+    grid-auto-flow: row;
+}
+
+.experience-item > h1 {
+    margin: 0;
+}
+
+.experience-item-header{
+    font-family: "Metropolis";
+    font-weight: 800;
+    color: var(--font-color-green);
+}
+.experience-item-subheader{
+    font-family: "Konkhmer Sleokchher";
+    color: var(--font-color-black);
+}
+
+.personal-photo{
+    height: 35rem;
+}
+

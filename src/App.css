@@ -47,47 +47,10 @@ body{
   height: 4rem;
 }
 
-.intro-section, .about-section {
+.intro-section{
   height: 100vh;
-}
-
-.project-section , .experiments-section{
-  min-height: 100vh;
 }
 
 .spacer{
   height: 200px;
 }
-
-.section-header{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.section-header-text-main{
-  font-family: "Metropolis";
-  font-size: var(--font-size-large);
-  text-transform: uppercase;
-  letter-spacing: 10%;
-  color: var(--font-color-green);
-  font-weight: 800;
-  margin: 0;
-}
-
-.section-header-text-sub{
-  font-family: "Metropolis";
-  font-size: 2rem;
-  font-weight: 800;
-  margin: 25px 0 0 0;
-}
-
-
-
-.personal-photo{
-  --photo-size: 150px;
-  border-radius: 50%;
-  height: var(--photo-size);
-  width: var(--photo-size);
-}
-

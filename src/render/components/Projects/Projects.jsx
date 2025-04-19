@@ -3,6 +3,7 @@ import { useState } from 'react'
 import StockImage from "./img/stock-image.png"
 import '../../../App.css'
 import GithubIcon from '/github-mark.svg'
+import SectionHeader from '../Shared/SectionHeader'
 
 const projectsContent = [ 
     {
@@ -91,16 +92,10 @@ function ProjectItem ({content}){
 function Projects(){
     return(
         <section id="projects" className="projects-section">
-            <div className="section-header">
-                <h1 className="section-header-text-main">
-                        Projects
-                </h1>   
-                <h1 className="section-header-text-sub">
-                    Web Applications and 
-                    <br/>
-                    Game Development
-                </h1>
-            </div>
+            <SectionHeader 
+                header={"Projects"} 
+                subHeader={"Web Applications and\nGame Development"}
+            />
             <div className="projects-content">
                 {
                     projectsContent.map( content => {

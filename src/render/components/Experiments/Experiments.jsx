@@ -1,6 +1,7 @@
 import './experiments-style.css'
 import '../../../App.css'
 import StockImage from '../Projects/img/stock-image.png'
+import SectionHeader from '../Shared/SectionHeader';
 
 const experimentsContent = [
     {
@@ -46,20 +47,14 @@ function ExperimentItem({content}){
 function Experiments(){
     return(
         <section className="experiments-section">
-            <div className="section-header">
-                <h1 className="section-header-text-main">
-                        Experiments
-                </h1>   
-                <h1 className="section-header-text-sub">
-                    Exploring Creative and 
-                    <br/>
-                    Interesting Topics
-                </h1>
-            </div>
+            <SectionHeader 
+                header={"Experiments"} 
+                subHeader={"Exploring Creative and\nInteresting Topics"}
+            />
             <div className="experiments-content">
                 {
                     experimentsContent.map(content => {
-                        return <ExperimentItem content={content}/>
+                        return <ExperimentItem key={crypto.randomUUID()} content={content}/>
                     })  
                 }
             </div>
