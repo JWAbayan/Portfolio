@@ -82,13 +82,7 @@
     justify-content: center;
 }
 
-@keyframes slide-in {
-    from {
-      transform: translateX(0%);
-    }
-  
-    to {
-      transform: translateX(100%);
-    }
-  }
-  
+.github-icon{
+    height: 2rem;
+    width: 2rem;
+}  

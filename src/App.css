@@ -47,11 +47,11 @@ body{
   height: 4rem;
 }
 
-.intro-section, .experiments-section, .about-section {
+.intro-section, .about-section {
   height: 100vh;
 }
 
-.project-section{
+.project-section , .experiments-section{
   min-height: 100vh;
 }
 

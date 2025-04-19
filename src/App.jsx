@@ -13,7 +13,6 @@ function App() {
       <Navbar/>
       <Intro/>
       <Projects/>
-      <div className="spacer"/>
       <Experiments/>
       <div className="spacer"/>
       <About/>              

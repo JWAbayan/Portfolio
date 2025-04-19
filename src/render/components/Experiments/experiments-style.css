@@ -1,0 +1,25 @@
+.experiments-section{
+    max-width: 100vw;
+    padding: 50px 180px 50px 180px;
+    display:flex;
+    flex-direction: column;
+}
+
+.experiments-content{
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+.experiment-item{
+    grid-row-end: span 10;
+}
+
+.experiment-item > img{
+    border-radius: 5px;
+    width: 100%;
+}

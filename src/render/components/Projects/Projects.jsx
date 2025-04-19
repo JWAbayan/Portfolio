@@ -2,43 +2,7 @@ import './projects-style.css'
 import { useState } from 'react'
 import StockImage from "./img/stock-image.png"
 import '../../../App.css'
-
-// const projectsContent = [
-//     {
-//         title: "Project Title",
-//         tools: "Framework, Libraries, Tools",
-//         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
-//         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
-//          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
-//     },
-//     {
-//         src: StockImage,
-//         alt: "stock-image"
-//     },
-//     {
-//         title: "Project Title",
-//         tools: "Framework, Libraries, Tools",
-//         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
-//         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
-//          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
-//     },
-//     {
-//         src: StockImage,
-//         alt: "stock-image"
-//     },
-//     {
-//         title: "Project Title",
-//         tools: "Framework, Libraries, Tools",
-//         description: `Description ipsum dolor sit amet, consectetur adipiscing elit. 
-//         Vestibulum  eleifend sollicitudin orci, at tempus orci gravida in. Cras venenatis  auctor iaculis.
-//          Maecenas efficitur vel sem non porttitor. Pellentesque  tortor ligula.`
-//     },
-//     {
-//         src: StockImage,
-//         alt: "stock-image"
-//     }
-// ]
-
+import GithubIcon from '/github-mark.svg'
 
 const projectsContent = [ 
     {
@@ -82,7 +46,6 @@ const projectsContent = [
       }
 ]
 
-
 function ProjectImage({info}){
     return(
         <div className="project-image">
@@ -98,7 +61,7 @@ function ProjectInfo({info}){
                 <h1>
                     {info.title}
                 </h1>
-                <img src="" alt="github-icon" />
+                <img className="github-icon" src={GithubIcon} alt="github-icon" />
             </div>
             <div className="project-tools">
                 <p>
@@ -126,13 +89,6 @@ function ProjectItem ({content}){
 
 
 function Projects(){
-
-    const [displayedProject, setDisplayedProject] = useState(0);
-
-    function changeDisplayedProject(index){
-        setDisplayedProject(index);
-    }
-
     return(
         <section id="projects" className="projects-section">
             <div className="section-header">
@@ -148,7 +104,7 @@ function Projects(){
             <div className="projects-content">
                 {
                     projectsContent.map( content => {
-                        return <ProjectItem content={content}/>
+                        return <ProjectItem key={crypto.randomUUID()} content={content}/>
                     })                    
                 }
             </div>
