@@ -20,7 +20,11 @@
 }
 
 .experiment-item > img{
+    transition: transform ease 0.2s;
     border-radius: 5px;
     width: 100%;
 }
 
+.experiment-item > img:hover{
+    transform: translateY(-.5rem);
+}   
