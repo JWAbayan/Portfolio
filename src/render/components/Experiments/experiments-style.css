@@ -1,6 +1,6 @@
 .experiments-section{
     max-width: 100vw;
-    padding: 50px 180px 50px 180px;
+    padding: 4rem 8rem 0 8rem;
     display:flex;
     flex-direction: column;
 }

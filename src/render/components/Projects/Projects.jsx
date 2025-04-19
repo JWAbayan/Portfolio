@@ -49,8 +49,8 @@ const projectsContent = [
 
 function ProjectImage({info}){
     return(
-        <div className="project-image">
-            <img src={info.src} alt={info.alt} />
+        <div className="project-image-container">
+            <img className="project-image" src={info.src} alt={info.alt} />
         </div>
     );
 }
