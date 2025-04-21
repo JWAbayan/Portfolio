@@ -4,15 +4,6 @@
     flex-direction: column;
 }
 
-.projects-intro{
-    background-color:#c3fdf5;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 105vh;
-}
-
 .projects-intro-text{
     font-size: 7rem;
     font-family: "Metropolis";
@@ -30,18 +21,12 @@
 .projects-content{
     height: 100%;
     margin: 6rem 0 4rem 4rem;
-    /* display:grid;
-    grid-template-columns: .8fr 1.2fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-auto-flow: column;
-    gap: 100px 0px;  */
 }
 
 .project-item{
     margin-bottom: 10rem;
     width: 100%;
     display: flex;
-    
 }
 
 .project-info{

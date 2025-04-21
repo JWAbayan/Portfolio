@@ -37,13 +37,10 @@
 }
 
 body{
+  height: 100vh;
   font-family: var(--font-family);
   color: var(--font-color-black);
   margin: 0;
-}
-
-.personal-logo{
-  height: 4rem;
 }
 
 .spacer{
