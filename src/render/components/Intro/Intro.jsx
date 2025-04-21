@@ -52,13 +52,15 @@ function Intro(){
                 </span>
             </h1>
           </div>
-          <Canvas camera={OrthographicCamera} >
-            <SoftShadows/>
-            <ambientLight intensity={1} color={"fffffff"}/>
-            <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} color={"#ffffff"}/>
-            <Earth position={[0, -0.5, 0]} scale={1.5} />
-            <OrbitControls enableZoom={false} enablePan={false}/> 
-          </Canvas>
+          <div className="hero-canvas">
+            <Canvas camera={OrthographicCamera} >
+              <SoftShadows/>
+              <ambientLight intensity={1} color={"fffffff"}/>
+              <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} color={"#ffffff"}/>
+              <Earth position={[0, -0.5, 0]} scale={1.5} />
+              <OrbitControls enableZoom={false} enablePan={false}/> 
+            </Canvas>
+          </div>
       </section>
     );
 }

@@ -58,3 +58,10 @@
   .nav-links-text:hover{
     transform: translateY(-10px);
   }
+
+
+  @media (max-width: 480px){
+    .nav-bar{
+      display: none;
+    }
+  }
