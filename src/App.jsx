@@ -9,14 +9,14 @@ import About from './render/components/About/About'
 function App() {
 
   return (
-    <main>      
+    <>       
       <Navbar/>
       <Intro/>
       <Projects/>
       <Experiments/>
       <div className="spacer"/>
       <About/>              
-    </main>
+    </>
   );
 }
 
