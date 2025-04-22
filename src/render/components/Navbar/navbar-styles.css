@@ -36,7 +36,7 @@
   margin: 0;
 }
 
-.nav-links button{
+.nav-links > button{
   background-color: transparent;
   font-family: 'Konkhmer Sleokchher';
   font-size: var(--font-size-medium);
@@ -54,8 +54,7 @@
 }
 
 .action-button > img, .night-mode-button > img{
-  height: 30px;
-  width: 30px;
+  height: 2rem;
   padding: 0;
 }
 
@@ -73,21 +72,66 @@
 }
 
 .toggleable-menu{
-  overflow: hidden;
   z-index: 999;
   position: fixed;
   height: 100vh;
   width: 100vw;
-  left:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   top:0;
-
-  display: flex;
-  justify-content: center;
+  
+  flex-direction: column;
   align-items: center;
-  background-color: rgb(145, 138, 138);
+  display: none;
+  background-color: rgb(255, 255, 255);
 }
 
+.menu-header{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+}
+
+.menu-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-links > button{
+  font-family: 'Konkhmer Sleokchher';
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+}
+
+.close-menu-button{
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.close-menu-button > img{
+  height: 100%;
+}
+
+.menu-personal-logo{
+  height: 2rem;
+}
+
+
+
 @media screen and (max-width: 480px){
+
+  .toggleable-menu{
+    display: flex;
+  }
+
   .nav-bar{
     z-index: 100;
     position: absolute;
@@ -103,7 +147,6 @@
 
   .personal-logo{
     display: none;
-    height: 2rem;
   }
 
   .nav-actions{

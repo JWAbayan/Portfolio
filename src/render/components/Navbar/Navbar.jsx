@@ -5,8 +5,6 @@ import personalLogo from '../../assets/img/personal-logo_1.svg'
 import expandMenuFilled from '../../assets/img/menu-collapse-filled.svg'
 import collapseMenuFilled from '../../assets/img/angle-left-filled.svg'
 import nightModeFilled from '../../assets/img/night-filled_1.svg'
-import { div } from "three/tsl";
-import { Example } from "@react-three/drei";
 
 const navlinks = [
   {
@@ -24,7 +22,7 @@ const navlinks = [
 ]
 
 
-function ToggleableMenu({opened}){
+function ToggleableMenu({opened, openMenu}){
 
   useEffect(()=>{
     document.body.style.overflow = opened ? "hidden" : ""   
@@ -34,7 +32,12 @@ function ToggleableMenu({opened}){
 
   return(
     <div className="toggleable-menu">
-      {/* <img className="mobile-personal-logo" src={personalLogo} alt="Personal Logo"/>
+      <div className="menu-header">
+        <img className="menu-personal-logo" src={personalLogo} alt="Personal Logo"/>
+        <button className="close-menu-button" onClick={()=>openMenu(false)}>
+          <img src={collapseMenuFilled} alt="Personal Logo"/>
+        </button>
+      </div>
       <div className="menu-links">
         {
           navlinks.map(link => {
@@ -45,10 +48,7 @@ function ToggleableMenu({opened}){
             );
           })   
         }
-        <button className="action-button">
-          <img src={expandMenuFilled} alt="Personal Logo"/>
-        </button>
-      </div> */}
+      </div> 
     </div>
   );
 }
@@ -86,7 +86,7 @@ function Navbar(){
           </div>
         </div>
         {
-          menuOpened && <ToggleableMenu opened={menuOpened} />
+          menuOpened && <ToggleableMenu opened={menuOpened} openMenu={openMenu}/>
         }
       </>
     );
