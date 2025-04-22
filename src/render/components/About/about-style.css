@@ -36,3 +36,19 @@
     height: 35rem;
 }
 
+@media (max-width: 480px){
+    .about-section{
+        margin-top: 2rem;
+        align-items: center;
+        padding: 0 2rem 0 2rem;
+    }
+
+    .about-content{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .experience-item{
+        margin-bottom: 2rem;
+    }
+}

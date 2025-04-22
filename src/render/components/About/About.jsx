@@ -46,18 +46,11 @@ function About(){
                 subHeader={"Areas of Experience"}
             />
             <div className="about-content">
-                <img 
-                    className="personal-photo" 
-                    src={PersonalPhoto} 
-                    alt="personal-photo" 
-                />
-                <div className="experiences">
-                    {
-                        experiencesContent.map(content=>{
-                            return <ExperienceItem header={content.header} subHeader={content.subHeader} />
-                        })
-                    }
-                </div>
+                {
+                    experiencesContent.map(content=>{
+                        return <ExperienceItem header={content.header} subHeader={content.subHeader} />
+                    })
+                }
             </div>
         </section>
     );
