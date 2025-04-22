@@ -14,7 +14,6 @@ function App() {
       <Intro/>
       <Projects/>
       <Experiments/>
-      <div className="spacer"/>
       <About/>              
     </>
   );

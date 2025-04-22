@@ -94,16 +94,36 @@
         flex-direction: column;
     }
 
+
     .project-item{
+        margin-bottom: 4rem;
         flex-direction: column;
     }
 
     .project-title > h1{
+        font-size: .9rem;
         margin: 0;
+    }
+
+    .project-tools > p, .project-description > p {
+        font-size: .7rem
+    }
+
+    .project-description{
+        width: 100%;
+    }
+
+    .project-image-container{
+        margin-top: 1rem;
     }
 
     .project-image{
         height: 15rem;
         width: 25rem;
+    }
+
+    .github-icon{
+        height: 1.3rem;
+        width: 1.3rem;
     }
 }
