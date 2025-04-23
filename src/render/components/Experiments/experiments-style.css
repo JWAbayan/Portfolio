@@ -30,7 +30,7 @@
 }   
 
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 500px){
     .experiments-section{
         margin-top: 2rem;
         align-items: center;
