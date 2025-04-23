@@ -6,7 +6,7 @@
 
 .section-header-text-main{
   font-family: "Metropolis";
-  font-size: var(--font-size-large);
+  font-size: clamp(2rem, 5vw, 3rem);
   text-transform: uppercase;
   letter-spacing: 10%;
   color: var(--font-color-green);
@@ -23,7 +23,7 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
 
   .section-header{
     width: 100%;

@@ -80,7 +80,7 @@
     width: 2rem;
 }  
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 900px){
     .projects-section{
         margin-top: 2rem;
         align-items: center;

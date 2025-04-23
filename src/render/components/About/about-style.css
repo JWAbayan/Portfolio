@@ -32,16 +32,11 @@
     height: 35rem;
 }
 
-@media (max-width: 500px){
+@media (max-width: 900px){
     .about-section{
         margin-top: 2rem;
         align-items: center;
         padding: 3rem 2rem 0 2rem;
-    }
-
-    .about-content{
-        display:flex;
-        flex-direction: column;
     }
 
     .experience-item{
@@ -54,5 +49,12 @@
 
     .experience-item-subheader{
         font-size: .7rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .about-content{
+        display:flex;
+        flex-direction: column;
     }
 }

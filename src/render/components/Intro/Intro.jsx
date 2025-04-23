@@ -1,13 +1,12 @@
 
 import './intro-style.css'
 import { Canvas } from '@react-three/fiber';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Earth from './Earth';
 
 import { OrbitControls, SoftShadows } from '@react-three/drei';
-import { OrthographicCamera } from '@react-three/drei';
 import { useInterval } from '../../../hooks/customHooks';
-
+import { MathUtils } from 'three';
 
 const passions = [
   "front-end development",
@@ -25,9 +24,38 @@ const Fade = {
 
 function Intro(){
 
+    const canvasRef = useRef();
     const [passionIndex, setPassionIndex] = useState(0);
+    const [cameraCustomParams, setCameraCustomParams] = useState({})
     const [fade, setFade] = useState(Fade.in)
     const fadeDuration = 3000;
+    
+    const camereFov = 50;
+    const planeAspectRatio = 16 / 9;
+
+    useEffect(()=>{
+      window.addEventListener("resize",()=>{
+        let customParams = {
+          aspect: 0,
+          fov: 0,
+        }
+
+        customParams.aspect = window.innerWidth / window.innerHeight;
+	
+        if (customParams.aspect > planeAspectRatio) {
+          // window too large
+          const cameraHeight = Math.tan(MathUtils.degToRad(camereFov / 2));
+          const ratio = customParams.aspect / planeAspectRatio;
+          const newCameraHeight = cameraHeight / ratio;
+          customParams.fov = MathUtils.radToDeg(Math.atan(newCameraHeight)) * 2;
+        } else {
+          // window too narrow
+          customParams.fov = camereFov;
+        }
+
+        setCameraCustomParams(customParams);
+      })
+    },[])
 
     useInterval(()=>{
        setFade(Fade.out);
@@ -55,7 +83,7 @@ function Intro(){
             </h1>
           </div>
           <div className="hero-canvas">
-            <Canvas camera={OrthographicCamera}>
+            <Canvas ref={canvasRef} camera={{near: 0.1, far: 1000, position: [0, 0, 5], ...cameraCustomParams }} >
               <SoftShadows/>
               <ambientLight intensity={1} color={"fffffff"}/>
               <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} color={"#ffffff"}/>

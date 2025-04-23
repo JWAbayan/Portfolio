@@ -32,6 +32,9 @@
   --font-size-small: 1rem;
   --font-size-medium: 1.3rem;
   --font-size-large: 3rem;
+  
+  --mobile-breakpoint: 500px;
+  --small-computer-breakpoint: 900px;
 
   background-color: var(--background-color);
 }

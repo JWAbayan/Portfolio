@@ -30,25 +30,27 @@
 }   
 
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 900px){
     .experiments-section{
         margin-top: 2rem;
         align-items: center;
         padding: 0 2rem 0 2rem;
     } 
+    /* .experiment-item{
+        width: 100%;
+        height: 20rem;
+    } */
 
+    
+}
+
+@media screen and (max-width: 500px) {
+    .experiment-item > img{
+        height: 100%;
+    }
     .experiments-content{
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .experiment-item{
-        width: 100%;
-        height: 20rem;
-    }
-
-    .experiment-item > img{
-        height: 100%;
     }
 }

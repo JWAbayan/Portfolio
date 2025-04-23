@@ -6,12 +6,12 @@
     right: 0;
     display: flex;
     align-items: center;
-    padding: 50px 60px 50px 60px;
+    padding: 4rem 4rem 4rem 4rem;
     justify-content: space-between;
 }
 
 .personal-logo{
-  height: 4rem;
+  height: clamp(3rem ,4vw, 4rem);
 }
 
 .mobile-personal-logo{
@@ -30,16 +30,20 @@
 }
 
 .nav-links-text{
-  transition-property: all;
+  font-family: 'Konkhmer Sleokchher';
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  transition-property: transform;
   transition-duration: .5s;
   transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
   margin: 0;
 }
 
+.nav-links-text:hover{
+  transform: translateY(-10px);
+}
+
 .nav-links > button{
   background-color: transparent;
-  font-family: 'Konkhmer Sleokchher';
-  font-size: var(--font-size-medium);
   color: var(--font-color-black);
   outline: none;
   border: none;
@@ -51,6 +55,10 @@
   margin: 0px 10px;
   border:none;
   background-color: transparent;
+}
+
+.open-menu-button{
+  display: none;
 }
 
 .action-button > img, .night-mode-button > img{
@@ -67,9 +75,6 @@
 }
 
 
-.nav-links-text:hover{
-  transform: translateY(-10px);
-}
 
 .toggleable-menu{
   z-index: 999;
@@ -125,21 +130,25 @@
 }
 
 
+@media (max-width: 1400px) {
+    
+}
 
-@media screen and (max-width: 500px){
+
+@media screen and (max-width: 900px){
 
   .toggleable-menu{
     display: flex;
   }
 
   .nav-bar{
+    position:static
     z-index: 100;
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
 
-    padding: 2rem;
+    padding: 3rem 2rem 2rem 2rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -161,6 +170,10 @@
   .night-mode-button, .open-menu-button{
     padding: 0;
     margin-left: 0 1rem;
+  }
+
+  .open-menu-button{
+    display: block; 
   }
 
   .night-mode-button > img, .open-menu-button > img{
