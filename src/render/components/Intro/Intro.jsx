@@ -3,9 +3,11 @@ import './intro-style.css'
 import { Canvas } from '@react-three/fiber';
 import { useState } from 'react';
 import Earth from './Earth';
+
 import { OrbitControls, SoftShadows } from '@react-three/drei';
 import { OrthographicCamera } from '@react-three/drei';
 import { useInterval } from '../../../hooks/customHooks';
+
 
 const passions = [
   "front-end development",
@@ -53,7 +55,7 @@ function Intro(){
             </h1>
           </div>
           <div className="hero-canvas">
-            <Canvas camera={OrthographicCamera} >
+            <Canvas camera={OrthographicCamera}>
               <SoftShadows/>
               <ambientLight intensity={1} color={"fffffff"}/>
               <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} color={"#ffffff"}/>
