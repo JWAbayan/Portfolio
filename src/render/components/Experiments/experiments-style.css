@@ -29,6 +29,11 @@
     transform: translateY(-.5rem);
 }   
 
+@media (max-width: 1200px){
+    .experiments-section{
+        padding: 4rem 4rem 0 4rem;
+    }
+}
 
 @media screen and (max-width: 900px){
     .experiments-section{

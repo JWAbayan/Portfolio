@@ -32,6 +32,12 @@
     height: 35rem;
 }
 
+@media (max-width: 1200px){
+    .about-section{
+        padding: 4rem 4rem 0 4rem;
+    }
+}
+
 @media (max-width: 900px){
     .about-section{
         margin-top: 2rem;

@@ -33,29 +33,29 @@ function Intro(){
     const camereFov = 50;
     const planeAspectRatio = 16 / 9;
 
-    useEffect(()=>{
-      window.addEventListener("resize",()=>{
-        let customParams = {
-          aspect: 0,
-          fov: 0,
-        }
+    // useEffect(()=>{
+    //   window.addEventListener("resize",()=>{
+    //     let customParams = {
+    //       aspect: 0,
+    //       fov: 0,
+    //     }
 
-        customParams.aspect = window.innerWidth / window.innerHeight;
+    //     customParams.aspect = window.innerWidth / window.innerHeight;
 	
-        if (customParams.aspect > planeAspectRatio) {
-          // window too large
-          const cameraHeight = Math.tan(MathUtils.degToRad(camereFov / 2));
-          const ratio = customParams.aspect / planeAspectRatio;
-          const newCameraHeight = cameraHeight / ratio;
-          customParams.fov = MathUtils.radToDeg(Math.atan(newCameraHeight)) * 2;
-        } else {
-          // window too narrow
-          customParams.fov = camereFov;
-        }
+    //     if (customParams.aspect > planeAspectRatio) {
+    //       // window too large
+    //       const cameraHeight = Math.tan(MathUtils.degToRad(camereFov / 2));
+    //       const ratio = customParams.aspect / planeAspectRatio;
+    //       const newCameraHeight = cameraHeight / ratio;
+    //       customParams.fov = MathUtils.radToDeg(Math.atan(newCameraHeight)) * 2;
+    //     } else {
+    //       // window too narrow
+    //       customParams.fov = camereFov;
+    //     }
 
-        setCameraCustomParams(customParams);
-      })
-    },[])
+    //     setCameraCustomParams(customParams);
+    //   })
+    // },[])
 
     useInterval(()=>{
        setFade(Fade.out);
