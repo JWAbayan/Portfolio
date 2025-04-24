@@ -14,10 +14,6 @@
   height: clamp(3rem ,4vw, 4rem);
 }
 
-.mobile-personal-logo{
-
-}
-
 .nav-actions{
   display: flex;
   align-items: center;
@@ -42,7 +38,8 @@
   transform: translateY(-10px);
 }
 
-.nav-links > button{
+.nav-button{
+  opacity: 0;
   background-color: transparent;
   color: var(--font-color-black);
   outline: none;
@@ -129,6 +126,31 @@
   height: 2rem;
 }
 
+.slide-in-0{
+  animation: 1s ease 0s slide-fade-in forwards;
+}
+
+.slide-in-1{
+  animation: 1s ease .2s slide-fade-in forwards;
+}
+
+.slide-in-2{
+  animation: 1s ease .4s slide-fade-in forwards;
+}
+
+@keyframes slide-fade-in {
+  from {
+    /* pushes the sun down past the viewport */
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+  to {
+    /* returns the sun to its default position */
+    transform: translateY(0);
+    opacity:100;
+  }
+}
+
 
 @media (max-width: 1400px) {
     
@@ -142,7 +164,7 @@
   }
 
   .nav-bar{
-    position:static
+    position:static;
     z-index: 100;
     top: 0;
     left: 0;

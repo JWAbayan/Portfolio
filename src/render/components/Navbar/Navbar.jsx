@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import {useEffect, useRef, useState } from "react";
 import './navbar-styles.css'
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 
 import personalLogo from '../../assets/img/personal-logo_1.svg'
 import expandMenuFilled from '../../assets/img/menu-collapse-filled.svg'
 import collapseMenuFilled from '../../assets/img/angle-left-filled.svg'
 import nightModeFilled from '../../assets/img/night-filled_1.svg'
+
 
 const navlinks = [
   {
@@ -23,7 +25,6 @@ const navlinks = [
 
 
 function ToggleableMenu({opened, openMenu}){
-
   useEffect(()=>{
     document.body.style.overflow = opened ? "hidden" : ""   
 
@@ -53,13 +54,38 @@ function ToggleableMenu({opened, openMenu}){
   );
 }
 
+
+function NavButton ({index, id, title}){
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  }
+
+  const buttonRef = useIntersectionObserver({
+      callback: entries => {animateCallback(entries)} ,
+      options: observerOptions
+  })
+
+
+  function animateCallback(entries){
+    if(!entries) return;
+    
+    entries.forEach(entry => {
+        entry.target.classList.add("slide-in-"+index)
+    })
+  }
+
+  return(
+    <button ref={buttonRef} key={id} className="nav-button" onClick={title => navigateToSection(title)}>
+      <h3 id={id} className="nav-links-text">{title}</h3>
+    </button>
+  );
+}
+
 function Navbar(){
-
     const [menuOpened, openMenu] = useState(false);
-
-    function navigateToSection(link){
-      
-    }
 
     return(
       <>
@@ -68,11 +94,9 @@ function Navbar(){
           <div className="nav-actions">
           <div className="nav-links">
             {
-              navlinks.map(link => {
+              navlinks.map((link, index) => {
                 return(
-                  <button key={link.id} onClick={link => navigateToSection(link)}>
-                    <h3 id={link.id} className="nav-links-text">{link.title}</h3>
-                  </button>
+                  <NavButton index={index} id={link.id} title={link.title}/>
                 );
               })   
             }

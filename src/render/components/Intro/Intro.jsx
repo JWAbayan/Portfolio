@@ -5,8 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 import Earth from './Earth';
 
 import { OrbitControls, SoftShadows } from '@react-three/drei';
-import { useInterval } from '../../../hooks/customHooks';
-import { MathUtils } from 'three';
+import useInterval from '../../../hooks/useInterval';
 
 const passions = [
   "front-end development",
