@@ -126,17 +126,20 @@
   height: 2rem;
 }
 
+.slide-in-0, .slide-in-1, .slide-in-2{
+  animation: 1s ease slide-fade-in forwards;
+}
+
 .slide-in-0{
-  animation: 1s ease 0s slide-fade-in forwards;
+  animation-delay: 0s;
 }
-
 .slide-in-1{
-  animation: 1s ease .2s slide-fade-in forwards;
+  animation-delay: 0.2s;
+}
+.slide-in-2{
+  animation-delay: 0.3s;
 }
 
-.slide-in-2{
-  animation: 1s ease .4s slide-fade-in forwards;
-}
 
 @keyframes slide-fade-in {
   from {

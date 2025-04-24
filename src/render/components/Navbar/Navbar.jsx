@@ -64,18 +64,18 @@ function NavButton ({index, id, title}){
   }
 
   const buttonRef = useIntersectionObserver({
-      callback: entries => {animateCallback(entries)} ,
+      callback: (entries) => {animateOnView(entries)} ,
       options: observerOptions
   })
 
-
-  function animateCallback(entries){
+  function animateOnView(entries){
     if(!entries) return;
     
     entries.forEach(entry => {
         entry.target.classList.add("slide-in-"+index)
     })
   }
+
 
   return(
     <button ref={buttonRef} key={id} className="nav-button" onClick={title => navigateToSection(title)}>
@@ -85,35 +85,52 @@ function NavButton ({index, id, title}){
 }
 
 function Navbar(){
-    const [menuOpened, openMenu] = useState(false);
+  const [menuOpened, openMenu] = useState(false);
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  }
 
-    return(
-      <>
-        <div className="nav-bar">
-          <img className="personal-logo" src={personalLogo} alt="Personal Logo"/>
-          <div className="nav-actions">
-          <div className="nav-links">
-            {
-              navlinks.map((link, index) => {
-                return(
-                  <NavButton index={index} id={link.id} title={link.title}/>
-                );
-              })   
-            }
-          </div>
-          <button className="night-mode-button">
-            <img src={nightModeFilled} alt="Personal Logo"/>
-          </button>
-          <button className="open-menu-button" onClick={()=>{openMenu(!menuOpened)}}>
-            <img src={expandMenuFilled} alt="Personal Logo"/>
-          </button>
-          </div>
+  const logoObserverRef = useIntersectionObserver({
+    callback: (entries) => { animateOnView(entries) },
+    options: observerOptions
+  })
+
+  function animateOnView(entries){
+    if(!entries) return;
+    entries.forEach(entry => {
+      entry.target.classList.add("slide-in-0");
+    })
+  }
+
+  return(
+    <>
+      <div className="nav-bar">
+        <img ref={logoObserverRef} className="personal-logo" src={personalLogo} alt="Personal Logo"/>
+        <div className="nav-actions">
+        <div className="nav-links">
+          {
+            navlinks.map((link, index) => {
+              return(
+                <NavButton index={index} id={link.id} title={link.title}/>
+              );
+            })   
+          }
         </div>
-        {
-          menuOpened && <ToggleableMenu opened={menuOpened} openMenu={openMenu}/>
-        }
-      </>
-    );
+        <button className="night-mode-button">
+          <img src={nightModeFilled} alt="Personal Logo"/>
+        </button>
+        <button className="open-menu-button" onClick={()=>{openMenu(!menuOpened)}}>
+          <img src={expandMenuFilled} alt="Personal Logo"/>
+        </button>
+        </div>
+      </div>
+      {
+        menuOpened && <ToggleableMenu opened={menuOpened} openMenu={openMenu}/>
+      }
+    </>
+  );
 }
 
 export default Navbar;
