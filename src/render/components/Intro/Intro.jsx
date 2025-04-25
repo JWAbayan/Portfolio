@@ -79,7 +79,7 @@ function Intro(){
             </h1>
           </div>
           <div ref={observedCanvasRef} className="hero-canvas">
-            <Canvas ref={canvasRef} camera={{near: 0.1, far: 1000, position: [0, 0, 5], ...cameraCustomParams }} >
+            <Canvas ref={canvasRef} camera={{near: 0.1, far: 1000, position: [0, 0, 5]}} >
               <SoftShadows/>
               <ambientLight intensity={1} color={"fffffff"}/>
               <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} color={"#ffffff"}/>

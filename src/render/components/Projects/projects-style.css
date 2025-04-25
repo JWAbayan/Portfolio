@@ -35,6 +35,7 @@
 }
 
 .project-title, .project-tools, .project-description{
+    opacity: 0;
     font-family: "Konkhmer Sleokchher";
 }
 
@@ -58,6 +59,7 @@
 
 
 .project-image-container{
+    opacity: 0;
     flex:2;
     display: flex;
     justify-content: center;
@@ -78,6 +80,40 @@
     height: 2rem;
     width: 2rem;
 }  
+
+.slide-fade-in-right, .slide-fade-in-right-delayed{
+    animation: 1s ease slide-fade-right-keyframe forwards
+}
+
+.slide-fade-in-right-delayed{
+    animation-delay: 0.1s;
+}
+
+.slide-fade-in-left{
+    animation: 1s ease slide-fade-left-keyframe forwards
+}
+
+@keyframes slide-fade-right-keyframe {
+    from {
+      transform: translateX(-2rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity:100;
+    }
+}
+
+@keyframes slide-fade-left-keyframe {
+    from {
+      transform: translateX(2rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity:100;
+    }
+}
 
 @media (max-width: 1200px){
     .projects-section{

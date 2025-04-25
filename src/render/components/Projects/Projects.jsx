@@ -4,6 +4,7 @@ import StockImage from "./img/stock-image.png"
 import '../../../App.css'
 import GithubIcon from '/github-mark.svg'
 import SectionHeader from '../Shared/SectionHeader'
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver'
 
 const projectsContent = [ 
     {
@@ -48,38 +49,84 @@ const projectsContent = [
 ]
 
 function ProjectImage({info}){
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.4,
+    }
+
+    const observedImage = useIntersectionObserver({
+        callback: entries => animateOnView(entries, "slide-fade-in-right"),
+        options: observerOptions 
+    }) 
+
+    function animateOnView(entries, className){
+        if(!entries) return;
+        
+        entries.forEach(entry=>{
+            if(entry.isIntersecting)
+                entry.target.classList.add(className);
+        })
+    }
     return(
-        <div className="project-image-container">
+        <div ref={observedImage} className="project-image-container">
             <img className="project-image" src={info.src} alt={info.alt} />
         </div>
     );
 }
 
 function ProjectInfo({info}){
+        
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.6,
+    }
+
+    const observedTitleRef = useIntersectionObserver({
+        callback: entries => animateOnView(entries, "slide-fade-in-right"),
+        options: observerOptions 
+    })
+
+    const observedInfo = useIntersectionObserver({
+        callback: entries => animateOnView(entries, "slide-fade-in-right-delayed"),
+        options: observerOptions 
+    })
+
+    function animateOnView(entries, className){
+        if(!entries) return;
+        
+        entries.forEach(entry=>{
+            if(entry.isIntersecting)
+                entry.target.classList.add(className);
+        })
+    }
+
     return(
         <div className="project-info">
-            <div className="project-title">
+            <div ref={observedTitleRef} className="project-title">
                 <h1>
                     {info.title}
                 </h1>
                 <img className="github-icon" src={GithubIcon} alt="github-icon" />
             </div>
-            <div className="project-tools">
+            <div ref={observedInfo} className="project-tools">
                 <p>
                     {info.tools}  
                 </p>
             </div>
-            <div className="project-description">
+            <div ref={observedInfo} className="project-description">
                 <p>
                     {info.description}
                 </p>
             </div>
         </div>
-    );
+);
 }
 
 
 function ProjectItem ({content}){
+
     return(
         <div className="project-item">
             <ProjectInfo info={content.info}/>

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
 }
 
 .section-header-text-main{
@@ -20,6 +21,23 @@
   font-size: 2rem;
   font-weight: 800;
   margin: 25px 0 0 0;
+}
+
+.slide-fade-up{
+  animation: 1s ease slide-fade-up-keyframe forwards;
+}
+
+
+@keyframes slide-fade-up-keyframe {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  to {
+    /* returns the sun to its default position */
+    transform: translateY(0);
+    opacity:100;
+  }
 }
 
 
