@@ -46,7 +46,7 @@ function ExperimentItem({content}){
 
 function Experiments(){
     return(
-        <section className="experiments-section">
+        <section id="experiments" className="experiments-section">
             <SectionHeader 
                 header={"Experiments"} 
                 subHeader={"Exploring Creative and\nInteresting Topics"}

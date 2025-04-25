@@ -40,7 +40,7 @@ function ExperienceItem ({header, subHeader}){
 
 function About(){
     return(
-        <section className="about-section">
+        <section id="about" className="about-section">
             <SectionHeader 
                 header={"About"} 
                 subHeader={"Areas of Experience"}
