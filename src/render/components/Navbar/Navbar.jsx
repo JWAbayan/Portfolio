@@ -63,7 +63,7 @@ function NavButton ({index, id, title}){
     threshold: 1.0,
   }
 
-  const buttonRef = useIntersectionObserver({
+  const observerRef = useIntersectionObserver({
       callback: (entries) => {animateOnView(entries)} ,
       options: observerOptions
   })
@@ -76,9 +76,8 @@ function NavButton ({index, id, title}){
     })
   }
 
-
   return(
-    <button ref={buttonRef} key={id} className="nav-button" onClick={title => navigateToSection(title)}>
+    <button ref={observerRef} key={id} className="nav-button" onClick={title => navigateToSection(title)}>
       <h3 id={id} className="nav-links-text">{title}</h3>
     </button>
   );
@@ -92,7 +91,7 @@ function Navbar(){
     threshold: 1.0,
   }
 
-  const logoObserverRef = useIntersectionObserver({
+  const observerRef = useIntersectionObserver({
     callback: (entries) => { animateOnView(entries) },
     options: observerOptions
   })
@@ -107,7 +106,7 @@ function Navbar(){
   return(
     <>
       <div className="nav-bar">
-        <img ref={logoObserverRef} className="personal-logo" src={personalLogo} alt="Personal Logo"/>
+        <img ref={observerRef} className="personal-logo" src={personalLogo} alt="Personal Logo"/>
         <div className="nav-actions">
         <div className="nav-links">
           {
@@ -118,10 +117,10 @@ function Navbar(){
             })   
           }
         </div>
-        <button className="night-mode-button">
+        <button ref={observerRef} className="night-mode-button">
           <img src={nightModeFilled} alt="Personal Logo"/>
         </button>
-        <button className="open-menu-button" onClick={()=>{openMenu(!menuOpened)}}>
+        <button ref={observerRef} className="open-menu-button" onClick={()=>{openMenu(!menuOpened)}}>
           <img src={expandMenuFilled} alt="Personal Logo"/>
         </button>
         </div>

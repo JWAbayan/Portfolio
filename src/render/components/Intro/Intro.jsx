@@ -6,6 +6,7 @@ import Earth from './Earth';
 
 import { OrbitControls, SoftShadows } from '@react-three/drei';
 import useInterval from '../../../hooks/useInterval';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const passions = [
   "front-end development",
@@ -25,36 +26,32 @@ function Intro(){
 
     const canvasRef = useRef();
     const [passionIndex, setPassionIndex] = useState(0);
-    const [cameraCustomParams, setCameraCustomParams] = useState({})
     const [fade, setFade] = useState(Fade.in)
     const fadeDuration = 3000;
-    
-    const camereFov = 50;
-    const planeAspectRatio = 16 / 9;
 
-    // useEffect(()=>{
-    //   window.addEventListener("resize",()=>{
-    //     let customParams = {
-    //       aspect: 0,
-    //       fov: 0,
-    //     }
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 1.0,
+    }
 
-    //     customParams.aspect = window.innerWidth / window.innerHeight;
-	
-    //     if (customParams.aspect > planeAspectRatio) {
-    //       // window too large
-    //       const cameraHeight = Math.tan(MathUtils.degToRad(camereFov / 2));
-    //       const ratio = customParams.aspect / planeAspectRatio;
-    //       const newCameraHeight = cameraHeight / ratio;
-    //       customParams.fov = MathUtils.radToDeg(Math.atan(newCameraHeight)) * 2;
-    //     } else {
-    //       // window too narrow
-    //       customParams.fov = camereFov;
-    //     }
+    const observedHeaderRef = useIntersectionObserver({
+      callback: (entries) => {animateOnView(entries, "slide-in-animation")},
+      options: observerOptions,
+    });
 
-    //     setCameraCustomParams(customParams);
-    //   })
-    // },[])
+    const observedCanvasRef = useIntersectionObserver({
+      callback: (entries) => {animateOnView(entries, "fade-in-animation")},
+      options: observerOptions,
+    });
+
+    function animateOnView(entries, animationClass){
+      if(!entries) return;
+      
+      entries.forEach(entry => {
+          entry.target.classList.add(animationClass)
+      })
+    }
 
     useInterval(()=>{
        setFade(Fade.out);
@@ -68,7 +65,7 @@ function Intro(){
     return(
         <section className="intro-section">
           <div className="hero-content">
-            <h1 className="hero-header">
+            <h1 ref={observedHeaderRef} className="hero-header">
                 Hey, I’m <span style={{color:"#45CB85"}}>John Abayan</span>.
                 <br/>
                 A developer with passion for 
@@ -81,7 +78,7 @@ function Intro(){
                 </span>
             </h1>
           </div>
-          <div className="hero-canvas">
+          <div ref={observedCanvasRef} className="hero-canvas">
             <Canvas ref={canvasRef} camera={{near: 0.1, far: 1000, position: [0, 0, 5], ...cameraCustomParams }} >
               <SoftShadows/>
               <ambientLight intensity={1} color={"fffffff"}/>
