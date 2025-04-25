@@ -14,8 +14,8 @@ const navlinks = [
     title: "PROJECTS"
   },
   {
-    id:"extras",
-    title: "EXTRAS"
+    id:"experiments",
+    title: "EXPERIMENTS"
   },
   {
     id:"about",
@@ -76,10 +76,13 @@ function NavButton ({index, id, title}){
     })
   }
 
+  function scrollToSection(){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+  }
 
   return(
-    <button ref={buttonRef} key={id} className="nav-button" onClick={title => navigateToSection(title)}>
-      <h3 id={id} className="nav-links-text">{title}</h3>
+    <button ref={buttonRef}u key={id} className="nav-button" onClick={scrollToSection}>
+      <h3 className="nav-links-text">{title}</h3>
     </button>
   );
 }
